@@ -1,0 +1,46 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "d65faab9124bec6c0318525691c5c958cc2742a89a6f2c57c895753e88b27421"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "3.6.4",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "17.4.0",
+            "platform_system": "Darwin",
+            "platform_version": "Darwin Kernel Version 17.4.0: Sun Dec 17 09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64",
+            "python_full_version": "3.6.4",
+            "python_version": "3.6",
+            "sys_platform": "darwin"
+        },
+        "pipfile-spec": 6,
+        "requires": {},
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pyserial": {
+            "hashes": [
+                "sha256:e0770fadba80c31013896c7e6ef703f72e7834965954a78e71a3049488d4d7d8",
+                "sha256:6e2d401fdee0eab996cf734e67773a0143b932772ca8b42451440cfed942c627"
+            ],
+            "version": "==3.4"
+        },
+        "pyserial-asyncio": {
+            "hashes": [
+                "sha256:861d975029498e777a67c6d6d392e20b84a79c01608f3778c978d0106467c8f8",
+                "sha256:c40677a8874d8c24d4423a97498746de776f6dbcd0efbb8fa43dcf011a589aee"
+            ],
+            "version": "==0.4"
+        }
+    },
+    "develop": {}
+}
