@@ -24,7 +24,7 @@ pipenv install
 
 This will create a virtual environment and install the dependencies listed in the [`Pipfile`](Pipfile) into it.
 
-### Run the codee
+### Run the code
 
 You run the code in the virtual environment created by `pipenv` via
 
