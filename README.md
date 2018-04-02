@@ -2,7 +2,7 @@
 
 This is example code showing you how to do asynchronous serial communication such as ASCII-over-serial, as is common in scientific settings. There is an accompanying article here:
 
-* TBD
+* [Bringing async to serial devices][post]
 
 ## Usage
 
@@ -32,11 +32,7 @@ You run the code in the virtual environment created by `pipenv` via
 pipenv run python3 async_serial_protocol.py
 ```
 
-or
-
-```bash
-pipenv run python3 async_serial_streams.py
-```
+To run one of the other programs, simply replace `async_serial_protocol.py` with the name of the program.
 
 ## License
 
@@ -54,6 +50,7 @@ submitted for inclusion in the work by you, as defined in the Apache-2.0
 license, shall be dual licensed as above, without any additional terms or
 conditions.
 
+[post]: https://tinkering.xyz/async-serial/
 [pyserial-asyncio]: http://pyserial-asyncio.readthedocs.io/en/latest/index.html
 [socat]: http://www.dest-unreach.org/socat/
 [pipenv]: https://github.com/pypa/pipenv
