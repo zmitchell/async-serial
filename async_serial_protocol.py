@@ -1,5 +1,4 @@
 import asyncio
-import serial
 import serial_asyncio
 
 
@@ -34,7 +33,6 @@ class Writer(asyncio.Protocol):
         """Store the serial transport and schedule the task to send data.
         """
         self.transport = transport
-        self.buf = bytes()
         print('Writer connection created')
         asyncio.ensure_future(self.send())
         print('Writer.send() scheduled')
