@@ -2,7 +2,7 @@ import asyncio
 import serial_asyncio
 
 
-async def main(loop):
+async def main():
     reader, _ = await serial_asyncio.open_serial_connection(url='./reader', baudrate=115200)
     print('Reader created')
     _, writer = await serial_asyncio.open_serial_connection(url='./writer', baudrate=115200)
@@ -32,5 +32,5 @@ async def recv(r):
 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main(loop))
+loop.run_until_complete(main())
 loop.close()
