@@ -2,7 +2,7 @@ import asyncio
 import serial_asyncio
 
 
-async def main():
+async def main(loop):
     reader, _ = await serial_asyncio.open_serial_connection(url='./reader', baudrate=115200)
     print('Reader created')
     _, writer = await serial_asyncio.open_serial_connection(url='./writer', baudrate=115200)
@@ -10,7 +10,10 @@ async def main():
     messages = [b'foo\n', b'bar\n', b'baz\n', b'qux\n']
     sent = send(writer, messages)
     received = recv(reader)
-    await asyncio.wait([sent, received])
+    await asyncio.wait([
+        asyncio.create_task(sent),
+        asyncio.create_task(received)
+        ])
 
 
 async def send(w, msgs):
@@ -31,6 +34,7 @@ async def recv(r):
         print(f'received: {msg.rstrip().decode()}')
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
-loop.close()
+if __name__ == '__main__':
+    loop = asyncio.new_event_loop()
+    loop.run_until_complete(main(loop))
+    loop.close()
