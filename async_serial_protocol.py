@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+import os, pty
 import asyncio
 import serial_asyncio
 
@@ -52,8 +55,9 @@ class Writer(asyncio.Protocol):
 
 
 loop = asyncio.get_event_loop()
-reader = serial_asyncio.create_serial_connection(loop, Reader, 'reader', baudrate=115200)
-writer = serial_asyncio.create_serial_connection(loop, Writer, 'writer', baudrate=115200)
+master, slave = pty.openpty()
+reader = serial_asyncio.create_serial_connection(loop, Reader, os.ttyname(slave), baudrate=115200)
+writer = serial_asyncio.create_serial_connection(loop, Writer, os.ttyname(master), baudrate=115200)
 asyncio.ensure_future(reader)
 print('Reader scheduled')
 asyncio.ensure_future(writer)
